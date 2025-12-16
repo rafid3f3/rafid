@@ -85,15 +85,14 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -102,19 +101,12 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though Oh My Zsh
 # users are encouraged to define aliases within a top-level file in
 # the $ZSH_CUSTOM folder, with .zsh extension. Examples:
-# - $ZSH_CUSTOM/aliases.zsh
-# - $ZSH_CUSTOM/macos.zsh
+
+if [ -r ~/.aliasrc ]; then
+  . ~/.aliasrc
+fi
+
 # For a full list of active aliases, run `alias`.
-#
-# aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
-alias brave="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=brave --file-forwarding com.brave.Browser @@u  @@"
-alias zen="/usr/bin/flatpak run --branch=stable --arch=x86_64 --command=launch-script.sh --file-forwarding app.zen_browser.zen @@u  @@"
-alias suu="sudo dnf update && sudo dnf upgrade -y"
-alias brightup="sudo ddcutil setvcp 10 + 7"
-alias brightdown="sudo ddcutil setvcp 10 - 7"
-alias :files='vim "$(fzf)"'
 
 # configuring tools:
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
