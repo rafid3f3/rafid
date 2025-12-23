@@ -1,0 +1,57 @@
+#
+#       ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗████████╗██╗   ██╗
+#      ██╔════╝ ██║  ██║██╔═══██╗██╔════╝╚══██╔══╝╚══██╔══╝╚██╗ ██╔╝
+#      ██║  ███╗███████║██║   ██║███████╗   ██║      ██║    ╚████╔╝
+#      ██║   ██║██╔══██║██║   ██║╚════██║   ██║      ██║     ╚██╔╝
+#      ╚██████╔╝██║  ██║╚██████╔╝███████║   ██║      ██║      ██║
+#       ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝      ╚═╝      ╚═╝
+#
+#                       (Ghostty Config)[https://ghostty.zerebos.com/] 👻
+#
+
+# Apperance:
+
+
+title = Ghostty
+theme = Adventure
+background-image=/home/rafid/Downloads/cus/yor.jpg
+background-image-fit=cover
+background-image-opacity=0.13
+bold-is-bright = true
+minimum-contrast = 2.3
+background = #000000
+foreground = #feffff
+selection-background = #606060
+selection-foreground = #ffffff
+cursor-color = #feffff
+cursor-text = #000000
+palette = 0=#040404
+palette = 1=#d84a33
+palette = 2=#5da602
+palette = 3=#eebb6e
+palette = 4=#417ab3
+palette = 5=#e5c499
+palette = 6=#bdcfe5
+palette = 7=#dbded8
+palette = 8=#685656
+palette = 9=#d76b42
+palette = 10=#99b52c
+palette = 11=#ffb670
+palette = 12=#97d7ef
+palette = 13=#aa7900
+palette = 14=#bdcfe5
+palette = 15=#e4d5c7
+
+
+# Enable zsh shell integration
+shell-integration = zsh
+
+#Key-bind
+
+keybind = super+Q=close_window
+keybind = ctrl+t=new_tab
+keybind = ctrl+c=copy_to_clipboard
+keybind = super+s=new_split:right
+keybind = ctrl+a=select_all
+keybind = super+f=toggle_fullscreen
+keybind = ctrl+n=new_window
