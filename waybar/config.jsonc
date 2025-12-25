@@ -29,6 +29,10 @@
   },
   "modules-left": ["group/left1", "group/left2", "group/left3"],
   "modules-center": ["hyprland/workspaces"],
+  "group/right0": {
+    "orientation": "inherit",
+    "modules": ["custom/clipboard"],
+  },
   "group/right1": {
     "orientation": "inherit",
     "modules": [
@@ -50,8 +54,12 @@
     "orientation": "inherit",
     "modules": ["clock"]
   },
+  "group/right4": {
+    "orientation": "inherit",
+    "modules": ["custom/power"]
+  },
 
-  "modules-right": ["group/right1", "group/right2", "group/right3"],
+  "modules-right": ["group/right1", "group/right2", "group/right3", "group/right4"],
   "hyprland/workspaces": {
     "on-click": "activate",
     "format": "{icon}",
@@ -123,7 +131,13 @@
       "(.*) - com.obsproject.Studio": "  $1 "
     }
   },
- "cpu": {
+  "custom/clipboard": {
+    "format": "{} ",
+  "exec": "echo '$(cliphist list | wc -l)'",
+  "interval": 30,
+  "on-click": "cliphist list | wofi --dmenu | cliphist decode | wl-copy"  // Opens menu to paste
+  },
+  "cpu": {
     "interval": 2,
     "format": "{usage}% 󰍛",
     "on-click": "omarchy-launch-or-focus-tui btop"
@@ -149,6 +163,11 @@
       }
     },
    "on-click-right": "omarchy-launch-floating-terminal-with-presentation omarchy-tz-select"
+  },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "/home/rafid/.config/hypr/scripts/Wlogout.sh"
   },
   "idle_inhibitor": {
     "format": "{icon}",
